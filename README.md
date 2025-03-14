@@ -55,6 +55,33 @@ export default MiComponente;
   <Text>Este es un contenedor</Text>
 </View>
 ```
+#### Crear un contenedor fácilmente usando `View`
+
+```jsx
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+
+const Container = ({ children }) => {
+  return <View style={styles.container}>{children}</View>;
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+    backgroundColor: '#f5f5f5',
+  },
+});
+
+export default function App() {
+  return (
+    <Container>
+      <Text>Hola, esto está dentro del contenedor</Text>
+    </Container>
+  );
+}
+```
+
 
 ### 🔤 Text (Texto)
 **`Text`**: Componente para mostrar textos.
