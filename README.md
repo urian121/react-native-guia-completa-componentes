@@ -105,9 +105,10 @@ const InputExample = () => {
 ```
 
 ### 📸 Image (Imagen)
-**Image**: Componente que sirve para mostrar imágenes
+**`Image`**: Componente que sirve para mostrar imágenes
 
 ```jsx
+import React, { useState } from 'react';
 import { Image } from 'react-native';
 
 // Imagen desde URL
@@ -127,6 +128,7 @@ import { Image } from 'react-native';
 **ScrollView**: Componente permite establecer un contenedor en el que se podrán almacenar varios componentes que se pueden ir desplazando en la pantalla.
 
 ```jsx
+import React, { useState } from 'react';
 import { ScrollView, View, Text, StyleSheet } from 'react-native';
 
 const ScrollViewExample = () => {
@@ -166,6 +168,7 @@ const HorizontalScrollExample = () => {
 El componente ActivityIndicator en React Native muestra un indicador de carga circular animado. Se utiliza para indicar a los usuarios que una operación está en proceso, como cuando se están cargando datos de una API, procesando información o realizando cualquier tarea que requiera tiempo.
 
 ```jsx
+import React, { useState } from 'react';
 import { ActivityIndicator, View } from 'react-native';
 
 const LoadingIndicator = () => {
@@ -181,6 +184,7 @@ const LoadingIndicator = () => {
 El componente TouchableOpacity en React Native crea áreas táctiles que responden al toque del usuario con un efecto de opacidad. Cuando el usuario presiona el elemento, este se vuelve ligeramente transparente (reduce su opacidad) para proporcionar retroalimentación visual.
 
 ```jsx
+import React, { useState } from 'react';
 import { TouchableOpacity, Text } from 'react-native';
 
 const TouchableExample = () => {
@@ -248,7 +252,6 @@ export default Contador;
 - `setContador(contador + 1)`: Actualiza el estado al hacer clic.
 
 ## 5️⃣ Estilos en React Native
-
 Se pueden definir estilos de dos maneras:
 
 ### 1️⃣ Estilos en línea
@@ -263,6 +266,7 @@ Se pueden definir estilos de dos maneras:
 **StyleSheet**: Componente en el que añadiremos los estilos del componente.
 
 ```jsx
+import React, { useState } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
 const MiComponente = () => {
@@ -308,6 +312,7 @@ export default MiComponente;
 **React Native** utiliza Flexbox para el diseño:
 
 ```jsx
+import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 
 const FlexboxExample = () => {
@@ -340,6 +345,7 @@ const styles = StyleSheet.create({
 Renderiza listas de datos extensas de forma eficiente, cargando solo los elementos visibles en pantalla. Es ideal para mostrar grandes colecciones de datos con buen rendimiento.
 
 ```jsx
+import React, { useState } from 'react';
 import { FlatList, Text, View, StyleSheet } from 'react-native';
 
 const datos = [
@@ -384,6 +390,7 @@ export default Lista;
 Muestra datos organizados en secciones con encabezados. Es similar a FlatList pero permite agrupar elementos relacionados bajo títulos de sección, ideal para datos categorizados como contactos por inicial, productos por categoría o ajustes agrupados por función.
 
 ```jsx
+import React, { useState } from 'react';
 import { SectionList, Text, View, StyleSheet } from 'react-native';
 
 const datos = [
