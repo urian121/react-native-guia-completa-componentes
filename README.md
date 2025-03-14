@@ -105,7 +105,7 @@ import { Button } from 'react-native';
 ```
 
 ### 🎛️ TextInput (Caja de Texto)
-**TextInput**: La función de este componente es proporcionarle un espacio al usuario para que pueda ingresar texto por medio del teclado de su dispositivo.
+**`TextInput`**: La función de este componente es proporcionarle un espacio al usuario para que pueda ingresar texto por medio del teclado de su dispositivo.
 
 ```jsx
 import React, { useState } from 'react';
@@ -149,7 +149,7 @@ import { Image } from 'react-native';
   style={{ width: 100, height: 100 }} 
 />
 ```
-### Componente SafeAreaView
+### 📱 Componente SafeAreaView
 Se usa para asegurarse de que el contenido de la pantalla no se superponga con áreas seguras del dispositivo, como el **`notch`** en iPhones o la barra de navegación en **`Android**`.
 
 #### Cómo funciona
@@ -209,9 +209,8 @@ const styles = StyleSheet.create({
 ```
 ✅ Con esta configuración, el `SafeAreaView` funciona bien en **iOS** y **Android**.
 
-
 ### 📜 ScrollView (Vista Desplazable)
-**ScrollView**: Componente permite establecer un contenedor en el que se podrán almacenar varios componentes que se pueden ir desplazando en la pantalla.
+**`ScrollView`**: Componente permite establecer un contenedor en el que se podrán almacenar varios componentes que se pueden ir desplazando en la pantalla.
 
 ```jsx
 import React, { useState } from 'react';
@@ -251,7 +250,8 @@ const HorizontalScrollExample = () => {
 ```
 
 ### 🔄 ActivityIndicator (Indicador de Carga)
-El componente ActivityIndicator en React Native muestra un indicador de carga circular animado. Se utiliza para indicar a los usuarios que una operación está en proceso, como cuando se están cargando datos de una API, procesando información o realizando cualquier tarea que requiera tiempo.
+**`ActivityIndicator`**: Muestra un indicador de carga circular animado.
+Se utiliza para indicar a los usuarios que una operación está en proceso, como cuando se están cargando datos de una `API`, procesando información o realizando cualquier tarea que requiera tiempo.
 
 ```jsx
 import React, { useState } from 'react';
@@ -267,7 +267,8 @@ const LoadingIndicator = () => {
 ```
 
 ### 📱 TouchableOpacity (Área Táctil)
-El componente TouchableOpacity en React Native crea áreas táctiles que responden al toque del usuario con un efecto de opacidad. Cuando el usuario presiona el elemento, este se vuelve ligeramente transparente (reduce su opacidad) para proporcionar retroalimentación visual.
+**`TouchableOpacity`**: Crea áreas táctiles que responden al toque del usuario con un efecto de opacidad. 
+Cuando el usuario presiona el elemento, este se vuelve ligeramente transparente (reduce su opacidad) para proporcionar retroalimentación visual.
 
 ```jsx
 import React, { useState } from 'react';
@@ -290,8 +291,7 @@ const TouchableExample = () => {
 };
 ```
 
-## 4️⃣ Componentes con Estado (useState)
-
+## 4️⃣ Componentes con Estado (`useState`)
 Para manejar datos dentro de un componente usamos `useState`:
 
 ```jsx
@@ -334,7 +334,7 @@ export default Contador;
 ```
 
 📌 **Explicación:**
-- `useState(0)`: Crea una variable de estado (contador) con valor inicial 0.
+- `useState(0)`: Crea una variable de estado (contador) con valor inicial `0`.
 - `setContador(contador + 1)`: Actualiza el estado al hacer clic.
 
 ## 5️⃣ Estilos en React Native
@@ -349,7 +349,7 @@ Se pueden definir estilos de dos maneras:
 ```
 
 ### 2️⃣ Estilos con StyleSheet (Recomendado)
-**StyleSheet**: Componente en el que añadiremos los estilos del componente.
+**`StyleSheet`**: Componente en el que añadiremos los estilos del componente.
 
 ```jsx
 import React, { useState } from 'react';
@@ -394,7 +394,6 @@ export default MiComponente;
 ```
 
 ## 6️⃣ Diseño con Flexbox
-
 **React Native** utiliza Flexbox para el diseño:
 
 ```jsx
