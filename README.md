@@ -893,6 +893,220 @@ const styles = StyleSheet.create({
 export default FormularioExample;
 ```
 
+### 📋 Formulario con `react-hook-form` en React Native
+Esta librería facilita mucho la validación y gestión de formularios.
+
+```jsx
+import React from 'react';
+import { View, Text, TextInput, Button, StyleSheet, ScrollView, Alert } from 'react-native';
+import { useForm, Controller } from 'react-hook-form';
+
+const FormularioEjemplo = () => {
+  const { control, handleSubmit, formState: { errors }, reset } = useForm({
+    defaultValues: {
+      nombre: '',
+      correo: '',
+      telefono: '',
+      edad: '',
+      mensaje: ''
+    }
+  });
+
+  const onSubmit = (data) => {
+    // Aquí procesarías el envío del formulario
+    console.log('Datos del formulario:', data);
+    
+    // Mostrar los datos enviados
+    Alert.alert(
+      'Formulario Enviado',
+      `Nombre: ${data.nombre}\nCorreo: ${data.correo}\nTeléfono: ${data.telefono}\nEdad: ${data.edad}\nMensaje: ${data.mensaje}`,
+      [{ text: 'OK', onPress: () => reset() }]
+    );
+  };
+
+  return (
+    <ScrollView contentContainerStyle={styles.container}>
+      <Text style={styles.title}>Formulario de Contacto</Text>
+      
+      {/* Control de Nombre */}
+      <Text style={styles.label}>Nombre:</Text>
+      <Controller
+        control={control}
+        rules={{
+          required: 'Este campo es obligatorio',
+          minLength: {
+            value: 3,
+            message: 'El nombre debe tener al menos 3 caracteres'
+          }
+        }}
+        render={({ field: { onChange, onBlur, value } }) => (
+          <TextInput
+            style={styles.input}
+            onBlur={onBlur}
+            onChangeText={onChange}
+            value={value}
+            placeholder="Ingresa tu nombre completo"
+          />
+        )}
+        name="nombre"
+      />
+      {errors.nombre && <Text style={styles.errorText}>{errors.nombre.message}</Text>}
+      
+      {/* Control de Correo */}
+      <Text style={styles.label}>Correo electrónico:</Text>
+      <Controller
+        control={control}
+        rules={{
+          required: 'El correo es obligatorio',
+          pattern: {
+            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+            message: 'El formato del correo no es válido'
+          }
+        }}
+        render={({ field: { onChange, onBlur, value } }) => (
+          <TextInput
+            style={styles.input}
+            onBlur={onBlur}
+            onChangeText={onChange}
+            value={value}
+            placeholder="ejemplo@correo.com"
+            keyboardType="email-address"
+            autoCapitalize="none"
+          />
+        )}
+        name="correo"
+      />
+      {errors.correo && <Text style={styles.errorText}>{errors.correo.message}</Text>}
+      
+      {/* Control de Teléfono */}
+      <Text style={styles.label}>Teléfono:</Text>
+      <Controller
+        control={control}
+        rules={{
+          pattern: {
+            value: /^[0-9]{10}$/,
+            message: 'Ingresa un número de 10 dígitos'
+          }
+        }}
+        render={({ field: { onChange, onBlur, value } }) => (
+          <TextInput
+            style={styles.input}
+            onBlur={onBlur}
+            onChangeText={onChange}
+            value={value}
+            placeholder="Teléfono (10 dígitos)"
+            keyboardType="phone-pad"
+          />
+        )}
+        name="telefono"
+      />
+      {errors.telefono && <Text style={styles.errorText}>{errors.telefono.message}</Text>}
+      
+      {/* Control de Edad */}
+      <Text style={styles.label}>Edad:</Text>
+      <Controller
+        control={control}
+        rules={{
+          pattern: {
+            value: /^[0-9]+$/,
+            message: 'Ingresa solo números'
+          },
+          validate: value => parseInt(value) >= 18 || 'Debes ser mayor de edad'
+        }}
+        render={({ field: { onChange, onBlur, value } }) => (
+          <TextInput
+            style={styles.input}
+            onBlur={onBlur}
+            onChangeText={onChange}
+            value={value}
+            placeholder="Edad"
+            keyboardType="numeric"
+          />
+        )}
+        name="edad"
+      />
+      {errors.edad && <Text style={styles.errorText}>{errors.edad.message}</Text>}
+      
+      {/* Control de Mensaje */}
+      <Text style={styles.label}>Mensaje:</Text>
+      <Controller
+        control={control}
+        rules={{
+          maxLength: {
+            value: 500,
+            message: 'El mensaje no puede exceder los 500 caracteres'
+          }
+        }}
+        render={({ field: { onChange, onBlur, value } }) => (
+          <TextInput
+            style={[styles.input, styles.textArea]}
+            onBlur={onBlur}
+            onChangeText={onChange}
+            value={value}
+            placeholder="Escribe tu mensaje aquí"
+            multiline
+            numberOfLines={4}
+          />
+        )}
+        name="mensaje"
+      />
+      {errors.mensaje && <Text style={styles.errorText}>{errors.mensaje.message}</Text>}
+      
+      <Button
+        title="Enviar Formulario"
+        onPress={handleSubmit(onSubmit)}
+        color="#4CAF50"
+      />
+    </ScrollView>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 20,
+    backgroundColor: '#f5f5f5',
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
+    textAlign: 'center',
+  },
+  label: {
+    fontSize: 16,
+    marginBottom: 5,
+    fontWeight: '500',
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: '#ddd',
+    borderRadius: 4,
+    padding: 10,
+    marginBottom: 12,
+    backgroundColor: '#fff',
+  },
+  textArea: {
+    height: 100,
+    textAlignVertical: 'top',
+  },
+  errorText: {
+    color: 'red',
+    fontSize: 12,
+    marginBottom: 10,
+    marginTop: -8,
+  },
+});
+
+export default FormularioEjemplo;
+```
+
+Este formulario en **React Native** usa `react-hook-form` para gestionar y validar los campos de entrada.  
+`Controller` maneja cada `TextInput`, aplicando reglas como requerimientos, validaciones de formato y longitud.  
+Los errores se muestran dinámicamente debajo de cada campo.  
+Al enviarlo, los datos se muestran en una alerta y el formulario se reinicia con `reset()`.  
+También utiliza `ScrollView` para evitar problemas de desplazamiento en pantallas pequeñas. 
+
+
 ## 1️⃣2️⃣ Mejores Prácticas
 
 ### Separar Lógica y Presentación
