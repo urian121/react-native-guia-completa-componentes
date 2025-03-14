@@ -1,9 +1,10 @@
 # 📖 Guía Completa de Componentes en React Native
 
+Guía completa de componentes en React Native 📱. Aprende a usar y personalizar los principales componentes con ejemplos prácticos y buenas prácticas. Ideal para principiantes y desarrolladores avanzados. 🚀
 
 ## 1️⃣ Instalación y Configuración
 
-Si aún no tienes un entorno de desarrollo configurado, puedes instalar **React Native CLI** o usar **Expo** (***recomendado para principiantes***):
+Si aún no tienes un entorno de desarrollo configurado, puedes instalar **React Native CLI** o usar **Expo** (***recomendado por React***):
 
 ### Instalación con Expo
 
@@ -41,13 +42,13 @@ export default MiComponente;
 ```
 
 📌 **Explicación:**
-- `<View>`: Similar a `<div>` en HTML. Contenedor genérico.
-- `<Text>`: Se usa para mostrar texto. Todo texto debe estar dentro de este componente.
+- `<View>`: Similar a un `<div>` en HTML.
+- `<Text>`: Se usa para mostrar texto.
 
 ## 3️⃣ Componentes Básicos
 
 ### 🟢 View (Contenedor)
-**View**: Es el componente más básico sobre el que heredan la mayoría de los demás componentes. Lo podríamos equiparar a un <div> de HTML.
+**`View`**: Es el componente más básico sobre el que heredan la mayoría de los demás componentes. Lo podríamos comparar a un <div> de HTML.
 
 ```jsx
 <View style={{ backgroundColor: 'lightgray', padding: 20, borderRadius: 5 }}>
@@ -56,7 +57,7 @@ export default MiComponente;
 ```
 
 ### 🔤 Text (Texto)
-**Text**: Componente para mostrar textos.
+**`Text`**: Componente para mostrar textos.
 
 ```jsx
 <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#333' }}>
@@ -65,7 +66,7 @@ export default MiComponente;
 ```
 
 ### 🔘 Button (Botón)
-sirve para crear botones interactivos básicos con una apariencia estándar según la plataforma (iOS o Android).
+**`Button`**: Sirve para crear botones interactivos básicos con una apariencia estándar según la plataforma (iOS o Android).
 
 ```jsx
 import { Button } from 'react-native';
