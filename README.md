@@ -1,6 +1,6 @@
 # 📖 Guía Completa de Componentes en React Native
 
-Guía completa de componentes en React Native 📱. Aprende a usar y personalizar los principales componentes con ejemplos prácticos y buenas prácticas. Ideal para principiantes y desarrolladores avanzados. 🚀
+Guía completa de componentes en React Native 📱. Aprende a usar y personalizar los principales componentes con ejemplos prácticos y buenas prácticas. 🚀
 
 ## 1️⃣ Instalación y Configuración
 
@@ -66,6 +66,8 @@ export default MiComponente;
 
 
 #### Crear un contenedor fácilmente usando `View`
+Este código define un componente `Container` que usa `View` para envolver y aplicar estilos a sus hijos.
+En `App`, el `Container` se reutiliza para mostrar un `Text` dentro de un fondo estilizado.
 
 ```jsx
 import React from 'react';
@@ -115,7 +117,7 @@ import { Button } from 'react-native';
 ```
 
 ### 🎛️ TextInput (Caja de Texto)
-**`TextInput`**: La función de este componente es proporcionarle un espacio al usuario para que pueda ingresar texto por medio del teclado de su dispositivo.
+**`TextInput`**: Componente que proporciona un espacio al usuario para que pueda ingresar texto por medio del teclado de su dispositivo.
 
 ```jsx
 import React, { useState } from 'react';
