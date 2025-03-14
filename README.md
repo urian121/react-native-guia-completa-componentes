@@ -150,6 +150,34 @@ import { Image } from 'react-native';
   style={{ width: 100, height: 100 }} 
 />
 ```
+### Componente SafeAreaView
+Se usa para asegurarse de que el contenido de la pantalla no se superponga con áreas seguras del dispositivo, como el **`notch`** en iPhones o la barra de navegación en **`Android**`.
+
+#### Cómo funciona
+
+- `SafeAreaView` ajusta automáticamente su padding para evitar que el contenido quede oculto detrás de áreas no seguras.
+Funciona mejor en **iOS**, pero en **Android** no tiene efecto a menos que uses SafeAreaProvider de la librería `react-native-safe-area-context`.
+
+```jsx
+import React from 'react';
+import { SafeAreaView, Text, StyleSheet } from 'react-native';
+
+export default function App() {
+  return (
+    <SafeAreaView style={styles.container}>
+      <Text>Hola, esto está dentro de SafeAreaView</Text>
+    </SafeAreaView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#f5f5f5',
+  },
+});
+```
+
 
 ### 📜 ScrollView (Vista Desplazable)
 **ScrollView**: Componente permite establecer un contenedor en el que se podrán almacenar varios componentes que se pueden ir desplazando en la pantalla.
