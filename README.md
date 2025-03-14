@@ -48,13 +48,23 @@ export default MiComponente;
 ## 3️⃣ Componentes Básicos
 
 ### 🟢 View (Contenedor)
-**`View`**: Es el componente más básico sobre el que heredan la mayoría de los demás componentes. Lo podríamos comparar a un <div> de HTML.
+**`View`**: Es el componente más básico sobre el que heredan la mayoría de los demás componentes. Lo podríamos comparar como un `<div>` de HTML.
 
 ```jsx
 <View style={{ backgroundColor: 'lightgray', padding: 20, borderRadius: 5 }}>
   <Text>Este es un contenedor</Text>
 </View>
 ```
+
+### 📌 Importante  
+> [!IMPORTANT]  
+> En **React** y **React Native**, las dobles llaves (`{{ }}`) indican que estás pasando un **objeto** en **JSX**.  
+> - La primera `{ }` permite escribir una expresión de **JavaScript** dentro de **JSX**.  
+> - La segunda `{ }` contiene el objeto con los estilos en formato **clave-valor**.  
+>
+> 📌 Esto es necesario porque los estilos en React se definen como objetos de JavaScript en lugar de cadenas CSS.  
+
+
 #### Crear un contenedor fácilmente usando `View`
 
 ```jsx
