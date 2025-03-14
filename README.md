@@ -526,8 +526,7 @@ const styles = StyleSheet.create({
 ```
 
 ## 8️⃣ Uso de API con `fetch`
-
-Para obtener datos de una API usamos fetch:
+Para obtener datos de una API usamos `fetch`:
 
 ```jsx
 import React, { useEffect, useState } from 'react';
@@ -616,8 +615,7 @@ export default ApiExample;
 ```
 
 ## 9️⃣ Navegación entre Pantallas
-
-Para la navegación, instala React Navigation:
+Para la navegación, instala `React Navigation`:
 
 ```bash
 npm install @react-navigation/native
@@ -686,7 +684,9 @@ export default App;
 
 ## 🔟 Hooks Comunes
 
-### useEffect (Efectos Secundarios)
+### `useEffect` (Efectos Secundarios)
+**`useEffect`** es un hook de efectos secundarios que permite ejecutar código en diferentes momentos del ciclo de vida de un componente.
+Se usa comúnmente para **cargar datos, suscribirse a eventos, manipular el DOM, o ejecutar lógica después de renderizar**.
 
 ```jsx
 import React, { useState, useEffect } from 'react';
@@ -712,7 +712,9 @@ const Timer = () => {
 };
 ```
 
-### useContext (Contexto Global)
+### `useContext` (Contexto Global)
+**`useContext`**: permite acceder a un contexto global en cualquier parte de la aplicación sin necesidad de pasar props manualmente.
+Es útil para manejar estados globales como autenticación, temas, idiomas, etc.
 
 ```jsx
 import React, { createContext, useContext, useState } from 'react';
@@ -1088,7 +1090,7 @@ react-devtools
 
 ## 1️⃣4️⃣ Optimizaciones de Rendimiento
 
-### Uso de React.memo para componentes puros:
+### Uso de `React.memo` para componentes puros:
 
 ```jsx
 import React, { memo } from 'react';
@@ -1102,7 +1104,9 @@ const MiComponente = memo(({ texto }) => {
 export default MiComponente;
 ```
 
-### useMemo para cálculos costosos:
+### `useMemo` para cálculos costosos:
+**`useMemo`**: memoriza valores computados para evitar cálculos innecesarios en cada render.
+Se usa cuando tienes funciones costosas o cálculos que no deberían ejecutarse si sus dependencias no han cambiado.
 
 ```jsx
 import React, { useMemo } from 'react';
@@ -1124,7 +1128,8 @@ const ListaFiltrada = ({ items, filtro }) => {
 };
 ```
 
-### useCallback para funciones:
+### `useCallback` para funciones:
+Sirve para memorizar funciones, evitando que se vuelvan a crear en cada render. Esto mejora el rendimiento al evitar que componentes hijos innecesariamente se vuelvan a renderizar.
 
 ```jsx
 import React, { useState, useCallback } from 'react';
