@@ -82,7 +82,6 @@ export default function App() {
 }
 ```
 
-
 ### 🔤 Text (Texto)
 **`Text`**: Componente para mostrar textos.
 
@@ -177,6 +176,38 @@ const styles = StyleSheet.create({
   },
 });
 ```
+
+#### Mejor soporte en Android
+En **Android**, para un mejor comportamiento, usa `SafeAreaProvider` de `react-native-safe-area-context`:
+
+1. Instala la librería
+`npm install react-native-safe-area-context`
+
+2. Implementación con SafeAreaProvider
+
+```jsx
+import React from 'react';
+import { SafeAreaView, Text, StyleSheet } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+
+export default function App() {
+  return (
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.container}>
+        <Text>Contenido seguro en iOS y Android</Text>
+      </SafeAreaView>
+    </SafeAreaProvider>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#f5f5f5',
+  },
+});
+```
+✅ Con esta configuración, el `SafeAreaView` funciona bien en **iOS** y **Android**.
 
 
 ### 📜 ScrollView (Vista Desplazable)
