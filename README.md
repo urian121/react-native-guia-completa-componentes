@@ -162,9 +162,9 @@ import { Image } from 'react-native';
 />
 ```
 ### 📱 Componente SafeAreaView
-Se usa para asegurarse de que el contenido de la pantalla no se superponga con áreas seguras del dispositivo, como el **`notch`** en iPhones o la barra de navegación en **`Android**`.
+Se usa para asegurarse de que el contenido de la pantalla no se superponga con áreas seguras del dispositivo, como el **`notch`** en iPhones o la barra de navegación en **`Android`**.
 
-#### Cómo funciona
+#### Cómo funciona 🤔
 
 - `SafeAreaView` ajusta automáticamente su padding para evitar que el contenido quede oculto detrás de áreas no seguras.
 Funciona mejor en **iOS**, pero en **Android** no tiene efecto a menos que uses SafeAreaProvider de la librería `react-native-safe-area-context`.
@@ -189,7 +189,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-#### Mejor soporte en Android
+#### 📝 Mejor soporte en Android
 En **Android**, para un mejor comportamiento, usa `SafeAreaProvider` de `react-native-safe-area-context`:
 
 1. Instala la librería
@@ -483,7 +483,7 @@ const styles = StyleSheet.create({
 export default Lista;
 ```
 
-### SectionList (Para listas con secciones)
+### 📜 SectionList (Para listas con secciones)
 Muestra datos organizados en secciones con encabezados. Es similar a FlatList pero permite agrupar elementos relacionados bajo títulos de sección, ideal para datos categorizados como contactos por inicial, productos por categoría o ajustes agrupados por función.
 
 ```jsx
@@ -725,7 +725,7 @@ const Timer = () => {
 ```
 
 ### `useContext` (Contexto Global)
-**`useContext`**: permite acceder a un contexto global en cualquier parte de la aplicación sin necesidad de pasar props manualmente.
+**`useContext`**: permite acceder a un contexto global en cualquier parte de la aplicación sin necesidad de pasar `props` manualmente.
 Es útil para manejar estados globales como autenticación, temas, idiomas, etc.
 
 ```jsx
