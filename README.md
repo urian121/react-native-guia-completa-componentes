@@ -10,15 +10,15 @@ Si aún no tienes un entorno de desarrollo configurado, puedes instalar **React 
 
 ```bash
 npx create-expo-app@latest my-app --template
-cd MiApp
+cd my-app
 npx expo start
 ```
 
 ### Instalación con React Native CLI
 
 ```bash
-npx react-native init MiApp
-cd MiApp
+npx react-native init my-app
+cd my-app
 npx react-native start
 ```
 
