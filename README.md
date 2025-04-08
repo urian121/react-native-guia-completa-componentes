@@ -146,19 +146,54 @@ const InputExample = () => {
 **`Image`**: Componente que sirve para mostrar imágenes
 
 ```jsx
-import { Image } from 'react-native';
+import { StyleSheet, Image, View } from 'react-native';
+import imgLogo from './assets/snack-icon.png'; // Imagen importada como módulo
+const image = require('./assets/snack-icon.png'); // Imagen como variable con require
 
-// Imagen desde URL
-<Image 
-  source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }} 
-  style={{ width: 100, height: 100 }} 
-/>
+export default function App() {
+  return (
+    <View style={styles.container}>
+      {/* Imagen desde URL */}
+      <Image 
+        source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }} 
+        style={styles.image} 
+      />
 
-// Imagen local
-<Image 
-  source={require('./assets/logo.png')} 
-  style={{ width: 100, height: 100 }} 
-/>
+      {/* Imagen local con require */}
+      <Image 
+        source={require('./assets/snack-icon.png')} 
+        style={styles.image} 
+      />
+
+      {/* Imagen desde variable */}
+      <Image 
+        source={image} 
+        style={styles.image} 
+      />
+
+      {/* Imagen importada */}
+      <Image 
+        source={imgLogo} 
+        style={styles.image} 
+      />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',   // Centrado vertical
+    alignItems: 'center',       // Centrado horizontal
+    backgroundColor: '#ecf0f1',
+    padding: 8,
+  },
+  image: {
+    width: 100,
+    height: 100,
+    marginBottom: 10,           // Espacio entre imágenes
+  },
+});
 ```
 ### 📱 Componente SafeAreaView
 Se usa para asegurarse de que el contenido de la pantalla no se superponga con áreas seguras del dispositivo, como el **`notch`** en iPhones o la barra de navegación en **`Android`**.
