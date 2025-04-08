@@ -146,7 +146,6 @@ const InputExample = () => {
 **`Image`**: Componente que sirve para mostrar imágenes
 
 ```jsx
-import React, { useState } from 'react';
 import { Image } from 'react-native';
 
 // Imagen desde URL
