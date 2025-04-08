@@ -256,7 +256,7 @@ const styles = StyleSheet.create({
 ✅ Con esta configuración, el `SafeAreaView` funciona bien en **iOS** y **Android**.
 
 ### 📜 ScrollView (Vista Desplazable)
-**`ScrollView`**: Componente permite establecer un contenedor en el que se podrán almacenar varios componentes que se pueden ir desplazando en la pantalla.
+**`ScrollView`**: Componente que permite establecer un contenedor en el que se podrán almacenar varios componentes que se pueden ir desplazando en la pantalla.
 
 ```jsx
 import React, { useState } from 'react';
