@@ -9,7 +9,7 @@ Si aún no tienes un entorno de desarrollo configurado, puedes instalar **React 
 ### Instalación con Expo
 
 ```bash
-npx create-expo-app MiApp
+npx create-expo-app@latest my-app --template
 cd MiApp
 npx expo start
 ```
