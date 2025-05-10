@@ -443,10 +443,9 @@ export default MiComponente;
 **React Native** utiliza Flexbox para el diseño:
 
 ```jsx
-import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 
-const FlexboxExample = () => {
+export default FlexboxExample = () => {
   return (
     <View style={styles.container}>
       <View style={styles.box1} />
